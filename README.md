@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# 🌐 React Network Layer (Axios + Environment-Based Setup)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean and scalable **network layer** built with React and Axios that supports multiple environments (`development`, `production`) using `.env` files. This project demonstrates API consumption, error handling, environment switching — ideal for enterprise apps.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔧 Axios instance with interceptors
+- 📦 Environment-based config (`.env.*`)
+- 📂 Centralized API endpoints
+- ✅ Token-based header injection
+- ⚠️ Global error handler
+- 🔄 Loading UI + logger (optional)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Folder Structure
 
-### `npm test`
+react-network-layer/
+│
+├── public/
+│ └── index.html
+│
+├── src/
+│ ├── api/
+│ │ └── apiClient.js # Axios instance with headers/interceptors
+│ │
+│ ├── config/
+│ │ └── env.js # Reads environment variables
+│ │
+│ ├── services/
+│ │ ├── accountService.js # API call functions
+│ │ └── accountEndpoints.js # Endpoint paths
+│ │
+│ ├── utils/
+│ │ ├── errorHandler.js # Central error handler
+│ │ ├── ErrorBoundary.js # Central error handler
+│ │ └── loader.js # Optional: Loader component
+│ │ └── logger.js # Optional: logs app error component
+│ │
+│ ├── App.js # Example UI to test API
+│ ├── index.js # Entry point
+│ └── App.css / index.css
+│
+├── .env.development # Local API env
+├── .env.production # Production env
+├── package.json
+└── README.md
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Install & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/yourusername/react-network-layer.git
+cd react-network-layer
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+npm run start:dev     # Runs with .env.development
+npm run start:uat     # Runs with .env.uat
+npm run start:prod    # Runs with .env.production
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm run build:dev     # Builds with .env.development
+npm run build:uat     # Builds with .env.uat
+npm run build:prod    # Builds with .env.production
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sample API Test
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🔗 https://jsonplaceholder.typicode.com/users
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Sample Output
+GET /users
+➡️ List of 10 users displayed in UI
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## ✅ What to Do Next
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Save this `README.md` in the root of your project.
+2. Add `.env.example` to help others get started.
+3. Push to GitHub.
+4. (Optional) Add a badge or live demo if deployed.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Would you like me to prepare a `.env.example` for you as well?
