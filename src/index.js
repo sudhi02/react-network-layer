@@ -2,16 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ErrorBoundary from './utils/ErrorBoundary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* Wrap your App component with ErrorBoundary */}
+    {/* This will catch any errors in the component tree below it */}
+    {/* You can also add a fallback UI in ErrorBoundary for better user experience */}
+    {/* For example, you can show a message like "Something went wrong" */}
+    {/* You can also log the error to an error reporting service */}
+    {/* This is useful for debugging and monitoring errors in production */}
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// If you want to enable service worker for offline capabilities, uncomment the following line
+// serviceWorkerRegistration.register();
